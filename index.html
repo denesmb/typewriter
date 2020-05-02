@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Typewriter Demo</title>
+    <link rel="stylesheet" href="./reset.css" />
+    <script type="module" src="./lit-typewriter.js"></script>
+    <script type="module" src="./demo.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        --typewriter-color: black;
+      }
+
+      body {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #eee;
+
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header,
+      main,
+      footer {
+        padding: 2em;
+      }
+
+      main {
+        flex: 1;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.7em;
+        opacity: 0.8;
+      }
+
+      h1 {
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .demo,
+      lit-demo::part(demo) {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 1px -2px,
+          rgba(0, 0, 0, 0.14) 0px 2px 2px 0px,
+          rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
+        background: white;
+        padding: 1em;
+        border-radius: 3px;
+        margin-bottom: 1em;
+      }
+
+      span[dir="rtl"] {
+        color: blue;
+      }
+
+      .custom {
+        border-radius: 2px;
+        padding: 3px 10px;
+        background: linear-gradient(to right, #ffddff, #ddffff);
+
+        /* Inheritable CSS properties pierce the shadow-dom
+           boundary, and will be applied to the Typewriter. */
+        font-weight: bold;
+        font-family: "Courier New", Courier, monospace;
+
+        /* This works with color too, as it's inherited. :) */
+        --typewriter-color: #rgba(0, 0, 0, 0.8);
+
+        /* Some custom CSS properties: */
+        --typewriter-cursor-color: violet;
+        --typewriter-cursor: "_";
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Typewriter Demo</h1>
+    </header>
+    <main>
+      <lit-demo></lit-demo>
+      <div class="demo">
+        <lit-typewriter
+          typingDelay="25"
+          strings='["I have custom styles.", "AND IT WORKS!"]'
+          class="custom"
+        ></lit-typewriter>
+      </div>
+    </main>
+    <footer>&copy; 2020 Dénes Máté Bencze</footer>
+  </body>
+</html>
