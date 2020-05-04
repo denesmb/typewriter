@@ -2,7 +2,11 @@
 
 `<lit-typewriter>`
 
-This is a native Typewriter web component, based on LitElement.
+This is a native Typewriter web component, built using [LitElement](https://lit-element.polymer-project.org/).
+
+## Demo
+
+Demo is available here: [https://lit-typewriter.netlify.app/](https://lit-typewriter.netlify.app/).
 
 ## Development
 
@@ -11,9 +15,4 @@ npm i
 npm start
 ```
 
-This will:
-
-- install the dependencies,
-- build the project,
-- start the development server, and
-- update the browser automatically, when files change.
+Start editing `src/lit-typewriter.ts`.
