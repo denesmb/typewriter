@@ -5,8 +5,7 @@
     <meta charset="utf-8" />
     <title>Typewriter Demo</title>
     <link rel="stylesheet" href="./reset.css" />
-    <script type="module" src="./lit-typewriter.js"></script>
-    <script type="module" src="./demo.js"></script>
+    <script type="module" src="./src/demo.ts"></script>
     <style>
       * {
         box-sizing: border-box;
@@ -43,6 +42,7 @@
       h1 {
         font-size: 2em;
         font-weight: bold;
+        margin-bottom: 0.5em;
       }
 
       .demo,
@@ -82,6 +82,10 @@
   <body>
     <header>
       <h1>Typewriter Demo</h1>
+      <p>
+        Code is available on
+        <a href="https://github.com/d-nash/typewriter">GitHub</a>.
+      </p>
     </header>
     <main>
       <lit-demo></lit-demo>
@@ -93,6 +97,8 @@
         ></lit-typewriter>
       </div>
     </main>
-    <footer>&copy; 2020 Dénes Máté Bencze</footer>
+    <footer>
+      &copy; 2020 Dénes Máté Bencze - <a href="https://denes.io/">Denes.io</a>
+    </footer>
   </body>
 </html>

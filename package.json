@@ -6,11 +6,11 @@
   "module": "lit-typewriter.js",
   "type": "module",
   "scripts": {
-    "start": "npm run clean && npm run build && npm run serve & npm run build:watch",
-    "serve": "es-dev-server --watch --node-resolve --open",
+    "start": "npm run clean && parcel serve index.html --open",
+    "clean": "rimraf lit-typewriter.{d.ts,d.ts.map,js,js.map} demo.{d.ts,d.ts.map,js,js.map} dist .cache",
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "clean": "rimraf lit-typewriter.{d.ts,d.ts.map,js,js.map} demo.{d.ts,d.ts.map,js,js.map}",
+    "build:demo": "npm run clean && parcel build index.html --no-source-maps",
     "checksize": "rollup -c ; cat lit-typewriter.bundled.js | gzip -9 | wc -c ; rm lit-typewriter.bundled.js"
   },
   "keywords": [
@@ -29,6 +29,7 @@
   "devDependencies": {
     "@rollup/plugin-replace": "^2.3.2",
     "es-dev-server": "^1.47.0",
+    "parcel-bundler": "^1.12.4",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
     "rollup": "^1.32.1",
