@@ -1,0 +1,52 @@
+{
+  "name": "lit-typewriter",
+  "version": "2.0.0",
+  "license": "MIT",
+  "description": "A Typewriter web component based on Lit.",
+  "keywords": [
+    "web-components",
+    "webcomponents",
+    "lit",
+    "litelement",
+    "typewriter"
+  ],
+  "homepage": "https://github.com/denesmb/typewriter#readme",
+  "author": {
+    "name": "Dénes Máté Bencze",
+    "email": "denes@denes.io",
+    "url": "https://denes.io"
+  },
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "targets": {
+    "demo": {
+      "source": "demo/index.html",
+      "distDir": "public"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denesmb/typewriter.git"
+  },
+  "scripts": {
+    "start": "npm run clean && npm run dev",
+    "dev": "parcel serve demo/index.html --open",
+    "build": "npm run clean && parcel build src/index.ts",
+    "build:demo": "npm run clean && parcel build --target demo",
+    "clean": "rm -rf dist && rm -rf public && rm -rf .parcel-cache",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.9.3",
+    "@parcel/transformer-typescript-tsc": "^2.9.3",
+    "@parcel/transformer-typescript-types": "^2.9.3",
+    "parcel": "^2.9.3",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@swc/helpers": "^0.5.1",
+    "lit": "^2.8.0",
+    "lit-html": "^2.8.0"
+  }
+}

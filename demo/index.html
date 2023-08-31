@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Typewriter Demo</title>
+    <link rel="stylesheet" href="./demo.css" />
+    <script type="module" src="../src/lit-typewriter.ts"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Typewriter Demo</h1>
+      <p>
+        Code is available on
+        <a href="https://github.com/denesmb/typewriter">GitHub</a>.
+      </p>
+    </header>
+    <main>
+      <div class="demo">
+        <lit-typewriter
+          strings='["Lit Typewriter Demo", "It works!"]'
+        ></lit-typewriter>
+      </div>
+      <div class="demo">
+        <span>
+          I am
+          <lit-typewriter
+            natural
+            noCursor
+            erasingDelay="0"
+            delayAfterErasing="0"
+            strings='[
+                "a native web component.",
+                "available as an NPM package.",
+                "built using LitElement.",
+                "using CSS Custom Properties.",
+                "customizable."
+            ]'
+          ></lit-typewriter>
+        </span>
+      </div>
+      <div class="demo" style="text-align: center">
+        <lit-typewriter
+          rtlStringIndices="[1, 2]"
+          strings='["I support right-to-left languages as well.", "שלום, מה נשמע?", "مرحبا، كيف حالك؟"]'
+        ></lit-typewriter>
+      </div>
+      <div class="demo">
+        <lit-typewriter
+          typingDelay="25"
+          strings='["I can have cool custom styles."]'
+          class="custom"
+        ></lit-typewriter>
+      </div>
+    </main>
+    <footer>
+      &copy; 2023 Dénes Máté Bencze - <a href="https://denes.io/">Denes.io</a>
+    </footer>
+  </body>
+</html>
